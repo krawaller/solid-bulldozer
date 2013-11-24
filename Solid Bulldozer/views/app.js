@@ -1,4 +1,4 @@
-//The main application! It will simply load the testmodules for coffeescript and sweet makros, and execute them.
+// View: App, renders Hello World and documentation link
 
 define(['backbone', 'underscore'],function(Backbone, underscore){
     var App = Backbone.View.extend({

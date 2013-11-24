@@ -1,6 +1,6 @@
 console.log("...LOADING config.js");
 
-//We configure require with paths to our modules, so we can reference them by name when we include them.
+//This  file is a config for all the dependencies needed in the project.
 require.config({
 	paths: {
 		jquery: "lib/jquery/jquery",
@@ -21,6 +21,7 @@ require.config({
   }
 });
 
+//Init method which uses appview to render hello world! and docco documentation
 require(['views/app'], function(AppView){
     new AppView();
 });
