@@ -2,20 +2,13 @@
 <html>
 	<head>
 		<title>demo</title>
-		<link rel="stylesheet" href="style.css"></link>
+		<link rel="stylesheet" href="style/css/style.css"></link>
+		<link rel="stylesheet" href="style/css/bootstrap/css/bootstrap.css"></link>
 	</head>
 	<body>
-	<div class="container">
-	    <a class="sidelink" href="doc.html">documentation</a>
-		<a class="sidelink" href="test.html">test suite</a>
-		<hr/>
-		<div id="logger"></div>
-	</div>
-		<script data-main="bootstrap.js" type="text/javascript" src="lib/requirejs/require.js"></script>
-		<script type="text/javascript">
-			require(["app"],function(App){
-				App.start();
-			});
-		</script>
+    	<div class="container">
+    	</div>
+    	<script data-main="config.js" type="text/javascript" src="lib/requirejs/require.js"></script>
+    	<script src="style/css/bootstrap/js/bootstrap.js"></script>
 	</body>
 </html>
