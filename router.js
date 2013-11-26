@@ -1,4 +1,4 @@
-define(['backbone','underscore'],function(Backbone, underscore){
+define(['backbone', 'jquery', 'underscore'],function(Backbone, jquery, underscore){
     return Backbone.Router.extend({
            routes:{
                "" : function(){

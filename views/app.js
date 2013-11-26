@@ -1,23 +1,13 @@
+console.log("...LOADING app.js")
 // View: App, renders Hello World and documentation link
 
-define(['backbone', 'underscore', 'router'], function(Backbone, underscore, Router){
-    
-    var App = Backbone.View.extend({
-        el: '.container',
-        // It's the first function called when this view it's instantiated.
-        template: _.template('<h3>Hello <%= who %><h3><a class="sidelink" href="doc.html">documentation</a><hr/>'),
-        initialize: function(){
-            this.render();
-        },
-        // $el - it's a cached jQuery object (el), in which you can use jQuery functions 
-        // to push content. Like the Hello World in this case.
-        render: function(){
-            this.$el.html(this.template({who: 'world!'}));
+define(['backbone', 'router', 'views/login'], function(Backbone, Router, LoginView){
+    return {
+        start: function(){
+            var loginView = new LoginView(),
+            router = new Router();
+            loginView.render();
+            Backbone.history.start();
         }
-    })
-    
-    var router = new Router();
-    Backbone.history.start();
-    
-    return App;
+    }
 });
