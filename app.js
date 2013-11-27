@@ -5,10 +5,11 @@ define(['backbone', 'router', 'views/mainview', 'views/navview', 'views/contentv
     function(Backbone, Router, MainView, NavView, ContentView, LoginView){
      return {
         start: function(){
-            var navView = new NavView();
-            var contentView = new ContentView(),
+            var view = new LoginView();
+            var navView = new NavView(),
+            contentView = new ContentView({view:view}),
             mainView = new MainView({el:".container",navView:navView,contentView:contentView}),
-            router = new Router();
+            router = new Router({mainView:mainView});
             
             mainView.render();
             Backbone.history.start();

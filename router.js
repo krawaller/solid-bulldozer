@@ -1,18 +1,22 @@
-define(['backbone', 'jquery', 'underscore'],function(Backbone, jquery, underscore){
+define(['backbone', 'jquery', 'underscore', 'views/login', 'views/register'],function(Backbone, jquery, underscore, LoginView, RegisterView){
     return Backbone.Router.extend({
+        
+           initialize: function(o){
+               
+           },
+            
            routes:{
                "" : function(){
-                    require(['views/login'], function(LoginView){
-                        new LoginView();
-                    });
+                    this.options.mainView.show();
                     console.log("loginView");
                },
                "register" : function(){
-                    require(['views/register'], function(RegisterView){
-                        new RegisterView();
-                    });
+
                     console.log("registerView");
                }
-           }
+           },
+           
+           nav: function(){  }
+           
     });
 });
